@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+
+use App\Http\Controllers\Customer\instHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +40,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
+
+//楽器一覧のルート.
+Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList')->name('InstHome');
 
 Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
 
