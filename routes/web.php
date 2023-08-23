@@ -39,5 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 
+Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
+
 require __DIR__.'/auth.php';
 
