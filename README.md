@@ -31,6 +31,8 @@ docker-compose exec laravel.test npm run dev
 
 ## 停止
 
+停止する時は下記のコマンドを実行する
+
 ```sh
 docker-compose stop
 ```
@@ -57,15 +59,20 @@ docker-compose exec laravel.test php artisan clear-compiled
 docker-compose exec laravel.test /bin/bash
 ```
 
+## マイグレーションを行うコマンド
+```sh
+docker-compose exec laravel.test php artisan migrate
+```
+
 ## シーディングを行うコマンド
+```sh
+docker-compose exec laravel.test php artisan db:seed --class=ShopsSeeder
 ```
-sail artisan db:seed --class=ShopsSeeder
+```sh
+docker-compose exec laravel.test php artisan db:seed --class=InstrumentsSeeder
 ```
-```
-sail artisan db:seed --class=InstrumentsSeeder
-```
-```
-sail artisan db:seed --class=ReservationsSeeder
+```sh
+docker-compose exec laravel.test php artisan db:seed --class=ReservationsSeeder
 ```
 
 ## 開発ルール
@@ -77,7 +84,7 @@ sail artisan db:seed --class=ReservationsSeeder
 
 ### コミットメッセージについてルール
 - 日本語でわかりやすいメッセージを簡潔に！
-```
+```sh
 git commit -m "ログイン機能を追加"
 ```
 
