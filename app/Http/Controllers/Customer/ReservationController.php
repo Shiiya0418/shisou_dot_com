@@ -11,7 +11,7 @@ use App\Models\Instrument;
 use App\Models\Shop;
 class ReservationController extends Controller
 {
-    public function show()
+    public function reservationGet()
     {
         return view('customer.reservation-form', []);
     }

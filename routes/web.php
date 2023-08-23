@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 
-Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'show']);
+Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
 
 Route::post('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
 

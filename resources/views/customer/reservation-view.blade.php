@@ -17,8 +17,8 @@
                         予約楽器: {{ $reshapedInfo['instrument-name'] }}<br><br>
                         要望等　:<br>
                         　　　　{{ $reshapedInfo['comment'] }}<br><br>
-                        <a class="shadow-lg bg-black shadow-black/50 text-white rounded px-2 py-1" href="reservation">予約画面へ</a>
                     </div>
+                    <a href="reservation">予約画面へ</a>
                 </div>
             </div>
         </div>
