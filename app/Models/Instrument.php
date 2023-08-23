@@ -14,5 +14,9 @@ class Instrument extends Model
     protected $primaryKey = 'instrument_id';
 
     public $timestamps = false;
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class, 'shop_id');
+    }
 
 }

@@ -17,8 +17,14 @@ class instHomeController extends Controller
     public function showList()
     {
         $Instruments = Instrument::all();
-
+        $Shops = Shop::all();
         // dd($Instruments);
         return view('Instrument.list',['instruments' => $Instruments]);
+    }
+    public function index()
+    {
+        $instruments = Instrument::with('shop')->get();
+
+        return view('instruments.index', compact('instruments'));
     }
 }

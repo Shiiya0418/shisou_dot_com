@@ -24,7 +24,7 @@
                                 <tr><td>値段：{{ $instrument->price  }}円</td></tr>
                                 <tr><td>カテゴリー：{{ $instrument->instrument_category  }}</td></tr>
                                 <tr><td>ギタータイプ：{{ $instrument->instrument_type  }}</td></tr>
-                                <tr><td>店番号：{{ $instrument->shop_id  }}</td></tr>
+                                <tr><td>店名：{{ $instrument->shop->shop_name  }}</td></tr>
                                 </tr>
                             </table>
                         @csrf
