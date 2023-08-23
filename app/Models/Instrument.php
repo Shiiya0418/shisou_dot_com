@@ -9,8 +9,14 @@ class Instrument extends Model
 {
     use HasFactory;
 
+    //テーブル名
+    protected $table = 'instruments';
     protected $primaryKey = 'instrument_id';
 
     public $timestamps = false;
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class, 'shop_id');
+    }
 
 }
