@@ -42,13 +42,13 @@ Route::middleware('auth')->group(function () {
 });
 
 //楽器詳細のルート.
-// Route::get('/instrumentHome/{instrument_id}','App\Http\Controllers\Customer\instHomeController@showDetail')->name('InstDetail');
-//Route::get('/instrumentHome/{instrument_id}', [instHomeController::class,'showDetail'])->name('instrument.detail');
 Route::get('/InstrumentHome/{instrument_id}', [instHomeController::class,'showDetail'])->name('instrument.detail');
+Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
+//楽器一覧のルート.
+Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList')->name('InstHome');
 
 
 //楽器一覧のルート.
-//Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList')->name('InstHome');
 Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('InstHome');
 
 //予約関係
