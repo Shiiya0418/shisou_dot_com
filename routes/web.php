@@ -41,7 +41,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 
+//楽器一覧のルート.
 Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList')->name('InstHome');
+
+Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
+
+Route::post('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
+
+Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
+
 
 require __DIR__.'/auth.php';
 
