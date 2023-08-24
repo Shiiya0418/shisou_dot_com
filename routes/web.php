@@ -68,5 +68,8 @@ Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentCon
 Route::post('/admin/instrument', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'registerInstrument'])->name('admin.instrument-view');
 // Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'showInstrument'])->name('admin.register-view');
 
+// 予約一覧
+Route::get('/admin/reservation', [\App\Http\Controllers\Admin\ReservationListController::class, 'showReservationList'])->name('admin.reservation-list');
+
 require __DIR__.'/auth.php';
 

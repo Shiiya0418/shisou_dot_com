@@ -12,4 +12,9 @@ class Reservation extends Model
     protected $primaryKey = 'reservation_id';
 
     public $timestamps = false;
+
+    public function instrument()
+    {
+        return $this->belongsTo(Instrument::class, 'instrument_id', 'instrument_id');
+    }
 }
