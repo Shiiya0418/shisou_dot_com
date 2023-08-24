@@ -11,21 +11,26 @@
                     <h2>試奏予約一覧!</h2>
                     <div>
                         <?php
-                        foreach ($reservations as $reservation) {
-                            echo "<div>";
-                                // echo "{$reservation}";
-                                echo "
-                                    予約番号: {$reservation['reservation_id']}<br>
-                                    予約日時: {$reservation['reservation_date']}<br>
-                                    予約者　: {$reservation['user_name']}<br>
-                                    楽器名　: {$reservation['instrument_name']}<br>
-                                    電話番号: {$reservation['phone_number']}<br>
-                                    要望等　: {$reservation['comment']}<br>
-                                    ";
-                            echo "</div><br><br>";
+                        if ($reservations == []) {
+                            echo "予約はありません";
+                        } else {
+                            foreach ($reservations as $reservation) {
+                                echo "<div>";
+                                    // echo "{$reservation}";
+                                    echo "
+                                        予約番号: {$reservation['reservation_id']}<br>
+                                        予約日時: {$reservation['reservation_date']}<br>
+                                        予約者　: {$reservation['user_name']}<br>
+                                        楽器名　: {$reservation['instrument_name']}<br>
+                                        電話番号: {$reservation['phone_number']}<br>
+                                        要望等　: {$reservation['comment']}<br>
+                                        ";
+                                echo "</div><br><br>";
+                            }
                         }
                         ?>
                     </div>
+                    <!-- ここは後から繋げましょう -->
                     <a href="/customer/reservation">管理者トップ画面へ</a>
                 </div>
             </div>
