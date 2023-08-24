@@ -15,7 +15,7 @@
                 @if ($shop)
                     <h2 class="text-2xl font-bold mb-4">店名：{{ $shop->shop_name }}</h2>
                     <div class="mb-4">
-                        <a href="/admin/instrument/{{ $shop_id }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">楽器追加</a>
+                        <a href="/admin/register/{{ $shop_id }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">楽器追加</a>
                         <a href="/admin/reservation/{{ $shop_id }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-green-600">予約一覧</a>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">登録楽器一覧</h3>

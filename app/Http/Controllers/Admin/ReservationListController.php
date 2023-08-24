@@ -32,6 +32,6 @@ class ReservationListController extends Controller
             ];
 
         }
-        return view('admin.reservation-list', ['reservations' => $reservationsArray]);
+        return view('admin.reservation-list', ['reservations' => $reservationsArray, 'shop_id' => $shop_id]);
     }
 }

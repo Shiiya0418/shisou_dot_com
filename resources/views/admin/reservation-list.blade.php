@@ -31,7 +31,7 @@
                         ?>
                     </div>
                     <!-- ここは後から繋げましょう -->
-                    <a href="/customer/reservation">管理者トップ画面へ</a>
+                    <a href="/admin/top/?input_data={{ $shop_id }}">管理者トップ画面へ</a>
                 </div>
             </div>
         </div>

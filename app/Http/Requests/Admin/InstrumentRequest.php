@@ -29,6 +29,7 @@ class InstrumentRequest extends FormRequest
     public function getInstrument(): array
     {
         $instrumentInfo = [
+            'shop-id' => $this->input('shop_id'),
             'instrument-name' => $this->input('maker').' '.$this->input('instrument-name'),
             'price' => (int) $this->input('price'),
             'category' => $this->input('category'),

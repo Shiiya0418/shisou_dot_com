@@ -64,7 +64,7 @@ Route::get('/customer/reservation/{instrument_id}', [\App\Http\Controllers\Custo
 Route::post('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
 // Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
 
-Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'instrumentForm'])->name('admin.instrument-form');
+Route::get('/admin/register/{shop_id}', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'instrumentForm'])->name('admin.instrument-form');
 Route::post('/admin/instrument', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'registerInstrument'])->name('admin.instrument-view');
 // Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'showInstrument'])->name('admin.register-view');
 
