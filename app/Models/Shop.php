@@ -11,4 +11,14 @@ class Shop extends Model
     protected $table = 'shops';
     protected $primaryKey = 'shop_id';
     public $timestamps = false;
+
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class, 'shop_id');
+    }
+    // リレーションを正しく設定
+    public function instruments()
+    {
+        return $this->hasMany(Instrument::class, 'shop_id'); // 外部キーの指定が正しくなるように修正
+    }
 }
