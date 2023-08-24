@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
+//ホームーティング用
 Route::get('/home', function () {
     return view('home');
 })->name('home');
@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 //トップ画面のルート
-Route::get('/', [\App\Http\Controllers\TopController::class, 'show']);
+Route::get('/', [\App\Http\Controllers\TopController::class, 'show'])->name('home');
 
 
 //管理者画面トップ画面のルート
