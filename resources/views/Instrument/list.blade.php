@@ -1,6 +1,6 @@
 <x-app-layout>
 <!-- @extends('layout')
-@section('title', 'ブログ一覧')
+@section('title', '楽器一覧')
 @section('content') -->
 
     <br>
@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-2">
                 <h2>楽器一覧</h2>
-                <table class="table table-striped">
+                <table class="table table-striped" width = "90%">
                     <tr>
                         <th width="30%">画像</th>
                         <th width="60%">詳細</th>
