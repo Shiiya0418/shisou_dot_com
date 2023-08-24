@@ -1,7 +1,7 @@
 <x-app-layout>
-<!-- @extends('layout')
+@extends('layout')
 @section('title', 'ブログ詳細')
-@section('content') -->
+@section('content') 
     
 
     @php
