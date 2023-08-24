@@ -53,11 +53,12 @@ Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('Inst
 
 //予約関係
 Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
+Route::post('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
+// Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
 
-Route::post('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
-
-Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
-
+Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'instrumentForm'])->name('admin.instrument-form');
+Route::post('/admin/instrument', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'registerInstrument'])->name('admin.instrument-view');
+// Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'showInstrument'])->name('admin.register-view');
 
 require __DIR__.'/auth.php';
 
