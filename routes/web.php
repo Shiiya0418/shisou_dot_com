@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
+
 
 Route::get('/home', function () {
     return view('home');
@@ -41,6 +40,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
+//トップ画面のルート
+Route::get('/', [\App\Http\Controllers\TopController::class, 'show']);
+
+//管理者画面トップ画面のルート
+Route::get('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
+Route::post('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
 
 //楽器詳細のルート.
 Route::get('/InstrumentHome/{instrument_id}', [instHomeController::class,'showDetail'])->name('instrument.detail');
@@ -55,11 +60,12 @@ Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('Inst
 
 //予約関係
 Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
+Route::post('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
+// Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
 
-Route::post('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
-
-Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
-
+Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'instrumentForm'])->name('admin.instrument-form');
+Route::post('/admin/instrument', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'registerInstrument'])->name('admin.instrument-view');
+// Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'showInstrument'])->name('admin.register-view');
 
 require __DIR__.'/auth.php';
 
