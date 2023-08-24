@@ -18,10 +18,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="sticky top-1/2 left-1/2 text-center p-6 bg-white border-b border-gray-200">
                 <p>
-                    <button type="button" class="cursor-pointer m-5 p-3 rounded-full font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2 shadow-lg" onclick="location.href='admin'">楽器店様はこちら</button>
+                    <button type="button" class="cursor-pointer m-5 p-3 rounded-full font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2 shadow-lg" onclick="location.href='admin/login'">楽器店様はこちら</button>
                 </p>
                 <p>
-                    <button type="button" class="cursor-pointer m-5 p-3 rounded-full font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2 shadow-lg" onclick="location.href='customer'">お客様はこちら</button>
+                    <button type="button" class="cursor-pointer m-5 p-3 rounded-full font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2 shadow-lg" onclick="location.href='instrumentHome'">お客様はこちら</button>
                 </p>
                 </div>
             </div>
