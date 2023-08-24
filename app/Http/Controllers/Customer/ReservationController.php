@@ -11,9 +11,9 @@ use App\Models\Instrument;
 use App\Models\Shop;
 class ReservationController extends Controller
 {
-    public function reservationGet()
+    public function reservationGet($instrument_id)
     {
-        return view('customer.reservation-form', []);
+        return view('customer.reservation-form', ['instrument_id' => $instrument_id]);
     }
 
     public function registerReservation(CreateRequest $request)
