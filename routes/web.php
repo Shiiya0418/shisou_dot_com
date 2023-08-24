@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
+
 
 Route::get('/home', function () {
     return view('home');
@@ -40,12 +39,18 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
+//トップ画面のルート
+Route::get('/', [\App\Http\Controllers\TopController::class, 'show']);
+
+//管理者画面トップ画面のルート
+Route::get('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
+Route::post('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
 
 //楽器詳細のルート.
 Route::get('/InstrumentHome/{instrument_id}', [instHomeController::class,'showDetail'])->name('instrument.detail');
 Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
 //楽器一覧のルート.
-Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList')->name('InstHome');
+Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList');
 
 
 //楽器一覧のルート.
