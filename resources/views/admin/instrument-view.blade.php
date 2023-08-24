@@ -22,7 +22,7 @@
                         不具合等　　:<br>
                         　　　　{{ $formInfo['comment'] }}<br><br>
                     </div>
-                    <a href="admin/register">管理者トップ画面へ</a>
+                    <a href="/admin/top/?input_data={{ $formInfo['shop-id'] }}">管理者トップ画面へ</a>
                 </div>
             </div>
         </div>

@@ -8,9 +8,9 @@ use App\Models\Instrument;
 
 class RegisterInstrumentController extends Controller
 {
-    public function instrumentForm()
+    public function instrumentForm($shop_id)
     {
-        return view('admin.instrument-form', []);
+        return view('admin.instrument-form', ['shop_id' => $shop_id]);
     }
 
     public function registerInstrument(InstrumentRequest $request)
@@ -19,7 +19,7 @@ class RegisterInstrumentController extends Controller
         $formInfo = $request->getInstrument();
         $imagePath = $request->file('image')->store('public/img');
         $formInfo['image-path'] = 'img/'.basename($imagePath);
-        $instrument->shop_id = 1;
+        $instrument->shop_id = $formInfo['shop-id'];
         $instrument->instrument_name = $formInfo['instrument-name'];
         $instrument->price = $formInfo['price'];
         $instrument->instrument_category = $formInfo['category'];

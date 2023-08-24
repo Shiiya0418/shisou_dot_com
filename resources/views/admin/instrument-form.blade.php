@@ -12,6 +12,7 @@
                     <div class="flex justify-center">
                         <form action="{{ route('admin.instrument-view') }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="shop_id" value="{{ $shop_id }}">
                             商品名　　　　: <input type="text" name="instrument-name"><br><br>
                             価格　　　　　: <input type="text" name="price" 
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" ><br><br>
