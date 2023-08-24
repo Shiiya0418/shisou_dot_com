@@ -18,7 +18,7 @@
                         要望等　:<br>
                         　　　　{{ $reshapedInfo['comment'] }}<br><br>
                     </div>
-                    <a href="/instrumentHome">予約画面へ</a>
+                    <a href="/instrumentHome">トップ画面へ</a>
                 </div>
             </div>
         </div>
