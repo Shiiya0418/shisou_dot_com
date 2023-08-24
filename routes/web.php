@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function () {
 //トップ画面のルート
 Route::get('/', [\App\Http\Controllers\TopController::class, 'show']);
 
+
 //管理者画面トップ画面のルート
 Route::get('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
 Route::post('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);

@@ -19,9 +19,7 @@
                         <a href="/admin/reservation/{{ $shop_id }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-green-600">予約一覧</a>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">登録楽器一覧</h3>
-                @else
-                    <p>該当のショップが存在しません。</p>
-                @endif
+
 
                 <table class="table table-striped" width = "90%">
                     <tr>
@@ -46,6 +44,9 @@
                     </tr>
                     @endforeach
                 </table>
+                @else
+                <p>該当のショップが存在しません。</p>
+            @endif
             </div>
         </div>
     </div>
