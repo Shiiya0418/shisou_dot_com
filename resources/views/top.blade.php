@@ -11,7 +11,32 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2>試奏.com</h2>
+        {{-- <h2 align="center">試奏.com</h2> --}}
+        {{-- 試奏.comロゴ表示 --}}
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <style>
+                .text1 {
+                    font-size: 80px;
+                    font-weight: bold;
+                    font-family: "游明朝体", "Yu Mincho", YuMincho, "MS P明朝", "MS PMincho", serif;
+                    text-anchor: middle; /* テキストの水平中央揃え */
+                    dominant-baseline: central; /* テキストの垂直中央揃え */
+                }
+                #circle {
+                    mix-blend-mode: difference;
+                }
+            </style>
+            <defs>
+                <text id="text1">
+                    SVGテキスト
+                </text>
+            </defs>
+            
+            <rect width="100%" height="100%" fill="#000"></rect>
+            <use href="#text1" class="text1" x="50%" y="50%" fill="#fff" />
+            <circle id="circle" cx="50%" cy="50%" r="100" fill="#fff"></circle>
+        </svg>
+        
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

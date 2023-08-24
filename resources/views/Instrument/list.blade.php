@@ -1,7 +1,7 @@
 <x-app-layout>
-<!-- @extends('layout')
+@extends('layout')
 @section('title', '楽器一覧')
-@section('content') -->
+@section('content') 
 
     <br>
     <div class="container">
