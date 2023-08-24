@@ -60,7 +60,7 @@ Route::get('/admin/top',[AdminHomeController::class,'adminShowList'])->name('Adm
 Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('InstHome');
 
 //予約関係
-Route::get('/customer/reservation', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
+Route::get('/customer/reservation/{instrument_id}', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
 Route::post('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
 // Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
 

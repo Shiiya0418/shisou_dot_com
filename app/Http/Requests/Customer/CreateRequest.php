@@ -29,7 +29,7 @@ class CreateRequest extends FormRequest
     public function reserve(): array
     {
         $reservationInfo = [
-            'instrument-id' => 1,
+            'instrument-id' => $this->input('instrument_id'),
             'reservation-date' => $this->input('reservation-date'),
             'name' => $this->input('name'),
             'phone-number' => $this->input('phone-number'),
