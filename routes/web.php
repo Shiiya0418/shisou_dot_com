@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\Customer\instHomeController;
+use App\Http\Controllers\Admin\AdminHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,10 +49,11 @@ Route::post('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::cla
 
 //楽器詳細のルート.
 Route::get('/InstrumentHome/{instrument_id}', [instHomeController::class,'showDetail'])->name('instrument.detail');
-Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
-//楽器一覧のルート.
-Route::get('/instrumentHome','App\Http\Controllers\Customer\instHomeController@showList');
 
+Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
+
+//店舗登録楽器一覧のルート.
+Route::get('/admin/top',[AdminHomeController::class,'adminShowList'])->name('AdminInstHome');
 
 //楽器一覧のルート.
 Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('InstHome');

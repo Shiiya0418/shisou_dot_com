@@ -16,7 +16,7 @@ class Instrument extends Model
     public $timestamps = false;
     public function shop()
     {
-        return $this->belongsTo(Shop::class, 'shop_id');
+        return $this->belongsTo(Shop::class, 'shop_id'); // 外部キーの指定が正しくなるように修正
     }
 
 }
