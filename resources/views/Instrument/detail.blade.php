@@ -85,8 +85,8 @@
         <div class="row">
             <div class="pt-20">
                 <h1>{{$instrument->instrument_name}}</h1>
-                <img src="{{asset( $instrument->image_path  )}}"alt="" height = "100" style="display: block; margin: auto;">
                 <h3>値段：{{ $instrument->price  }}円</h3>
+                <img src="{{asset( $instrument->image_path  )}}"alt="" height = "100" style="display: block; margin: auto;">
                 <h3>カテゴリー：{{ $instrument->instrument_category  }}</h3>
                 <h3>ギタータイプ：{{ $instrument->instrument_type  }}</h3>
                 <h3>フレット数：{{ $instrument->fret  }}</h3>

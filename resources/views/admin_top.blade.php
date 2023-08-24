@@ -43,13 +43,28 @@
                 <div class="text-center p-6 bg-white border-b border-gray-200">
 
                     @csrf
-                    <form action="http://localhost/admin/top/" method="GET" class="flex sm:items-center mb-6 flex-col sm:flex-row">
+                    <form action="/admin/top/" method="GET" class="flex sm:items-center mb-6 flex-col sm:flex-row">
                         <div class="flex sm:items-center mb-6 flex-col sm:flex-row">
                             <label class="block sm:w-2/3 font-bold sm:text-right mb-1 pr-4" for="name">店舗ID:<span class="text-red-500"> * </span></label>
                             <input class="block w-full sm:w-2/3 bg-gray-200 py-2 px-3 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white"
                                 type="text" name="input_data" placeholder="店舗IDを入力してください。"/>
                             <div class="sticky top-1/2 left-1/2 text-center p-6 bg-white border-b border-gray-200">
                                 <button class="w-[150px] cursor-pointer p-3 rounded-full font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2 shadow-lg" type="submit">ログイン</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h2>以下は店舗登録用です!</h2>
+                    <form action="{{ route('admin.signup') }}" method="GET" class="flex sm:items-center mb-6 flex-col sm:flex-row">
+                        @csrf
+                        <div class="flex sm:items-center mb-6 flex-col sm:flex-row">
+                            <label class="block sm:w-2/3 font-bold sm:text-right mb-1 pr-4" for="name">店舗名:<span class="text-red-500"> * </span></label>
+                            <input class="block w-full sm:w-2/3 bg-gray-200 py-2 px-3 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white"
+                                type="text" name="shop_name" placeholder="店舗名を入力してください。"/>
+                            <label class="block sm:w-2/3 font-bold sm:text-right mb-1 pr-4" for="name">店舗住所:<span class="text-red-500"> * </span></label>
+                            <input class="block w-full sm:w-2/3 bg-gray-200 py-2 px-3 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white"
+                                type="text" name="shop_address" placeholder="店舗の住所を入力してください。"/>
+                            <div class="sticky top-1/2 left-1/2 text-center p-6 bg-white border-b border-gray-200">
+                                <button class="w-[150px] cursor-pointer p-3 rounded-full font-semibold text-white text-base bg-blue-500 hover:bg-blue-700 ring-blue-200 ring-2 shadow-lg" type="submit">店舗登録</button>
                             </div>
                         </div>                        
                     </form>

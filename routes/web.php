@@ -56,6 +56,9 @@ Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
 //店舗登録楽器一覧のルート.
 Route::get('/admin/top',[AdminHomeController::class,'adminShowList'])->name('AdminInstHome');
 
+// 店舗登録
+Route::get('/admin/signup', [\App\Http\Controllers\Admin\AdminRegisterController::class, 'registerShop'])->name('admin.signup');
+
 //楽器一覧のルート.
 Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('InstHome');
 
