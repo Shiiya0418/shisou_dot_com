@@ -11,15 +11,15 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')" class="text-decoration-none">
                         {{ __('掲示板') }}
                     </x-nav-link>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            {{-- <div class="hidden sm:flex sm:items-center sm:ml-6">
                 @auth
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -63,7 +63,7 @@
                     </x-nav-link>
                 </div>
                 @endauth
-            </div>
+            </div> --}}
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">

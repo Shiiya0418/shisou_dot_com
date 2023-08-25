@@ -31,6 +31,8 @@ docker-compose exec laravel.test npm run dev
 
 ## 停止
 
+停止する時は下記のコマンドを実行する
+
 ```sh
 docker-compose stop
 ```
@@ -56,3 +58,38 @@ docker-compose exec laravel.test php artisan clear-compiled
 # Laravel実行コンテナにログイン
 docker-compose exec laravel.test /bin/bash
 ```
+
+## マイグレーションを行うコマンド
+```sh
+docker-compose exec laravel.test php artisan migrate
+```
+
+## シーディングを行うコマンド
+```sh
+docker-compose exec laravel.test php artisan db:seed --class=ShopsSeeder
+```
+```sh
+docker-compose exec laravel.test php artisan db:seed --class=InstrumentsSeeder
+```
+```sh
+docker-compose exec laravel.test php artisan db:seed --class=ReservationsSeeder
+```
+
+## 開発ルール
+### ブランチについてのルール
+- `main` `: リリース用アプリケーションブランチ（最後の最後にdevelopをマージする）
+- `develop` : 開発期間中におけるmain
+- `feature/issue番号-機能名` `: 各機能の開発用ブランチ
+    - 例）`feature/1-Login`
+
+### コミットメッセージについてルール
+- 日本語でわかりやすいメッセージを簡潔に！
+```sh
+git commit -m "ログイン機能を追加"
+```
+
+### Issueに関して
+はじめにIssueを建てて、それに自分をアサインし作業を行う。
+
+### マージに関して
+rebaseしても構いません

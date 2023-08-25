@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+
+use App\Http\Controllers\Customer\instHomeController;
+use App\Http\Controllers\Admin\AdminHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
+
+//ホームーティング用
 Route::get('/home', function () {
     return view('home');
 })->name('home');
@@ -38,6 +40,39 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
+//トップ画面のルート
+Route::get('/', [\App\Http\Controllers\TopController::class, 'show'])->name('home');
+
+
+//管理者画面トップ画面のルート
+Route::get('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
+Route::post('admin/login', [\App\Http\Controllers\Admin\Admin_TopController::class, 'show']);
+
+//楽器詳細のルート.
+Route::get('/InstrumentHome/{instrument_id}', [instHomeController::class,'showDetail'])->name('instrument.detail');
+
+Route::get('top', [\App\Http\Controllers\TopController::class, 'show']);
+
+//店舗登録楽器一覧のルート.
+Route::get('/admin/top',[AdminHomeController::class,'adminShowList'])->name('AdminInstHome');
+
+// 店舗登録
+Route::get('/admin/signup', [\App\Http\Controllers\Admin\AdminRegisterController::class, 'registerShop'])->name('admin.signup');
+
+//楽器一覧のルート.
+Route::get('/instrumentHome',[instHomeController::class,'showList'])->name('InstHome');
+
+//予約関係
+Route::get('/customer/reservation/{instrument_id}', [\App\Http\Controllers\Customer\ReservationController::class, 'reservationGet']);
+Route::post('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'registerReservation'])->name('customer.reservation');
+// Route::get('/customer/result', [\App\Http\Controllers\Customer\ReservationController::class, 'showReservation'])->name('customer.reservation-view');
+
+Route::get('/admin/register/{shop_id}', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'instrumentForm'])->name('admin.instrument-form');
+Route::post('/admin/instrument', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'registerInstrument'])->name('admin.instrument-view');
+// Route::get('/admin/register', [\App\Http\Controllers\Admin\RegisterInstrumentController::class, 'showInstrument'])->name('admin.register-view');
+
+// 予約一覧
+Route::get('/admin/reservation/{shop_id}', [\App\Http\Controllers\Admin\ReservationListController::class, 'showReservationList'])->name('admin.reservation-list');
 
 require __DIR__.'/auth.php';
 
