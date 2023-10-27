@@ -1,4 +1,7 @@
-# Relicサマーインターン（25卒）のサンプルアプリ
+# 試奏.com
+[Relicサマーインターン](https://www.wantedly.com/companies/relic/post_articles/546697#_=_) の開発の続きを個人で行うリポジトリである。
+
+個人開発を元リポジトリから別のリポジトリとして続けることは許可を得ています。
 
 ## 初回セットアップ手順（上から順番に実行）
 
@@ -79,8 +82,8 @@ docker-compose exec laravel.test php artisan db:seed --class=ReservationsSeeder
 ### ブランチについてのルール
 - `main` `: リリース用アプリケーションブランチ（最後の最後にdevelopをマージする）
 - `develop` : 開発期間中におけるmain
-- `feature/issue番号-機能名` `: 各機能の開発用ブランチ
-    - 例）`feature/1-Login`
+- `feature/issue番号_機能名` `: 各機能の開発用ブランチ
+    - 例）`feature/1_chat`
 
 ### コミットメッセージについてルール
 - 日本語でわかりやすいメッセージを簡潔に！
@@ -92,4 +95,6 @@ git commit -m "ログイン機能を追加"
 はじめにIssueを建てて、それに自分をアサインし作業を行う。
 
 ### マージに関して
-rebaseしても構いません
+rebaseをベースとするマージを行います。
+
+基本的に、`PR` を出す前に `develop` にリベースし、コンフリクトを先に解消します。
